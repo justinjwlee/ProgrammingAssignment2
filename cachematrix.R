@@ -5,11 +5,12 @@
 
 makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
-    setMatrix <- function(y) {
+    setMatrix <- function(y) { # sets a matrix to the special 'matrix' object
         x <<- y
         m <<- NULL
     }
-    getMatrix <- function() x
+    getMatrix <- function() x # function to retrieve the matrix from the special 'matrix' object
+    # sets or gets the inverse of the matrix if cacheSolve has been called
     setInverse <- function(inverse) m <<- inverse
     getInverse <- function() m
     list(setMatrix = setMatrix, getMatrix = getMatrix,
